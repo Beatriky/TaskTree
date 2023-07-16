@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "iOkOnHwz6tggVAe9TyY8u3/Qm2hMHzFIzC+Pw0+cjgI=",
+  "Source": "TaskBackend",
+  "BasePath": "_content/TaskBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
