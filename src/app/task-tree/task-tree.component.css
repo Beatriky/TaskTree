@@ -1,0 +1,46 @@
+.task-tree {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .task-tree li {
+    margin-bottom: 10px;
+  }
+  
+  .task-tree h2 {
+    cursor: pointer;
+  }
+  
+  .task-tree h2:hover {
+    text-decoration: underline;
+  }
+  
+  .task-tree h2.expanded::before {
+    content: '▼';
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .step {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .step.expanded::before {
+    content: '▼';
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .sub-step {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .owner {
+    color: #777;
+    margin-left: 5px;
+  }
+  

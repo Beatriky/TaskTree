@@ -1,0 +1,27 @@
+<div class="task-tree">
+  <ul>
+    <li *ngFor="let task of tasks">
+      <h2 (click)="toggleExpansion(task)" [class.expanded]="task.expanded">{{ task.name }}</h2>
+      <div class="task-actions">
+        <button (click)="deleteTask(task)">Delete</button>
+        <br>
+      </div>
+      <ul *ngIf="task.expanded">
+        <li *ngFor="let step of task.steps">
+          <div class="step" (click)="toggleStepExpansion(step)" [class.expanded]="step.expanded">
+            <span>{{ step.name }}</span>
+            <span class="owner">- {{ step.owner }}</span>
+          </div>
+          <ul *ngIf="step.expanded && step.subSteps && step.subSteps.length > 0">
+            <li *ngFor="let subStep of step.subSteps">
+              <div class="sub-step">
+                <span>{{ subStep.name }}</span>
+                <span class="owner">- {{ subStep.owner }}</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
