@@ -23,10 +23,6 @@ interface Step {
 export class TaskTreeComponent implements OnInit {
   tasks: Task[] = [];
 
-  editedTask: Task | null = null;
-  editedStep: Step | null = null;
-  editedSubStep: Step | null = null;
-
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -37,7 +33,7 @@ export class TaskTreeComponent implements OnInit {
     this.http.get<Task[]>('https://localhost:7090/api/tasks').subscribe(
       (tasks) => {
         this.tasks = tasks;
-
+      //sa se 
         if (this.tasks.length > 0) {
           this.tasks[0].expanded = false;
         }
@@ -54,16 +50,6 @@ export class TaskTreeComponent implements OnInit {
   toggleStepExpansion(step: Step) {
     step.expanded = !step.expanded;
   }
-  
-  createTask(taskName: string) {
-    const newTask: Task = { name: taskName, steps: [] };
-    this.http.post<Task>('https://localhost:7090/api/tasks', newTask)
-      .subscribe(task => {
-        this.tasks.push(task);
-      }, error => {
-        console.error('Error creating task:', error);
-      });
-  }
 
   deleteTask(task: Task) {
     this.http.delete(`https://localhost:7090/api/tasks/${task.id}`)
@@ -73,6 +59,15 @@ export class TaskTreeComponent implements OnInit {
         console.error('Error deleting task:', error);
       });
   }
-
 }
+  // createTask(taskName: string) {
+  //   const newTask: Task = { name: taskName, steps: [] };
+  //   this.http.post<Task>('https://localhost:7090/api/tasks', newTask)
+  //     .subscribe(task => {
+  //       this.tasks.push(task);
+  //     }, error => {
+  //       console.error('Error creating task:', error);
+  //     });
+  // }
+
 
