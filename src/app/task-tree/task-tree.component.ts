@@ -60,14 +60,3 @@ export class TaskTreeComponent implements OnInit {
       });
   }
 }
-  // createTask(taskName: string) {
-  //   const newTask: Task = { name: taskName, steps: [] };
-  //   this.http.post<Task>('https://localhost:7090/api/tasks', newTask)
-  //     .subscribe(task => {
-  //       this.tasks.push(task);
-  //     }, error => {
-  //       console.error('Error creating task:', error);
-  //     });
-  // }
-
-
